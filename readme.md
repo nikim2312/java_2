@@ -69,9 +69,7 @@ observable.subscribe(new Observer<>() {
   public void onComplete() { System.out.println("Завершено"); }
 });''' </pre>
 Пример 2: Использование операторов
-java
-Копировать
-Редактировать
+<pre> '''java
 Observable.create(observer -> {
   for (int i = 1; i <= 10; i++) observer.onNext(i);
   observer.onComplete();
@@ -83,11 +81,9 @@ Observable.create(observer -> {
   public void onNext(Object item) { System.out.println(item); }
   public void onError(Throwable t) { t.printStackTrace(); }
   public void onComplete() { System.out.println("Поток завершен"); }
-});
+});''' </pre>
 Пример 3: Асинхронная подписка
-java
-Копировать
-Редактировать
+<pre> '''java
 Observable<Integer> observable = Observable.create(observer -> {
   observer.onNext(42);
   observer.onComplete();
@@ -100,4 +96,4 @@ observable
     public void onNext(Integer item) { System.out.println("Получено: " + item); }
     public void onError(Throwable t) { t.printStackTrace(); }
     public void onComplete() { System.out.println("Поток завершен"); }
-  });
+  });''' </pre>
