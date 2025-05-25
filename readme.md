@@ -55,19 +55,19 @@ observeOn(Scheduler) — определяет поток, в котором вы
 
 Примеры использования
 Пример 1: Подписка на простой поток
-"""
+<pre> '''java
 Observable<Integer> observable = Observable.create(observer -> {
   observer.onNext(1);
   observer.onNext(2);
   observer.onNext(3);
   observer.onComplete();
 });
-"""
+
 observable.subscribe(new Observer<>() {
   public void onNext(Integer item) { System.out.println("Получено: " + item); }
   public void onError(Throwable t) { System.err.println("Ошибка: " + t.getMessage()); }
   public void onComplete() { System.out.println("Завершено"); }
-});
+});''' </pre>
 Пример 2: Использование операторов
 java
 Копировать
